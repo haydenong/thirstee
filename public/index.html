@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="thirstee">
+<head>
+    <meta charset="UTF-8">
+    <title>Thirstee</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/forms.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/registration.css">
+</head>
+
+<body class="grey darken-4">
+<!--NAVBAR-->
+<div ng-controller="NavBarCtrl as ctrl">
+    <div class="navbar-fixed" ng-show="ctrl.isLoggedIn">
+        <nav>
+            <div class="nav-wrapper cyan darken-4">
+                <form class="left">
+                    <div class="input-field">
+                        <input id="navSearch" type="search" required>
+                        <label for="navSearch"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
+                <a href="#/search" class="center brand-logo"><i class="medium material-icons">local_bar</i>Thirstee</a>
+
+                <ul class="center hide-on-med-and-down">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Thirstee Partners</a></li>
+                    <li class="navbarpromo">Promotions</li>
+                </ul>
+
+                <ul class="right hide-on-med-and-down" ng-hide="ctrl.isLoggedIn">
+                    <li>
+                        <button class="waves-effect waves-light btn" ng-click="ctrl.ShowHide()">Sign Up/Login</button>
+                    </li>
+                </ul>
+                <ul class="right hide-on-med-and-down" ng-show="ctrl.isLoggedIn">
+                    <li>
+                        <button class="waves-effect waves-light btn">{{ctrl.userProfile.name.first}} {{ctrl.userProfile.name.last}}
+                        </button>
+                    </li>
+                    <li>
+                        <img class="profilePicSec" src="{{ctrl.userProfile.profile_pic_url}}" alt="user profile"/>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!--END OF NAVBAR-->
+
+    <!--LOGIN-->
+    <div class="loginMenu" ng-show="ctrl.IsVisible" method="post" role="form"
+         name="loginForm" autocomplete="off"
+         ng-submit="ctrl.login()">
+        <div class="container">
+            <div class="row">
+                <div class="col s7">
+                    <form class="loginForm-container">
+                        <h5>Login</h5>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="username" type="text" class="validate" ng-model="ctrl.loginUser.username"
+                                       required>
+                                <label for="username">Username</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="password" type="password" class="validate" ng-model="ctrl.loginUser.password"
+                                       required>
+                                <label for="password">Password</label>
+                                <a href="#">Forgot your password?</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6">
+                                <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked"/>
+                                <label class="grey-text text-darken-3" for="filled-in-box">Remember me</label>
+                            </div>
+                            <div class="col s6">
+                                <button type="submit" class="waves-effect waves-light btn">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col s5">
+                    <div class="loginForm-container">
+                        <div class="row">
+                            <div class="col s12">
+                                <a href="/auth/facebook/" class="waves-effect waves-light btn">
+                                    <i class="fa fa-facebook-official fa-fw" aria-hidden="true">
+                                    </i>| SIGN IN WITH FACEBOOK</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <a href="/auth/google/" class="waves-effect waves-light btn">
+                                    <i class="fa fa-google-plus fa-fw" aria-hidden="true"></i> | SIGN IN WITH GOOGLE</a>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col s12">
+                                <a href="#/registration" class="waves-effect waves-light btn">Sign Up For a New
+                                    Account</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END OF LOGIN-->
+
+<div ui-view></div>
+
+</body>
+<script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/materialize/dist/js/materialize.min.js"></script>
+<script type="text/javascript" src="/angular/angular.min.js"></script>
+<script type="text/javascript" src="/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="/angular-messages/angular-messages.min.js"></script>
+<script type="text/javascript" src="/angular-materialize/src/angular-materialize.js"></script>
+<script type="text/javascript" src="/angular-http-auth/src/http-auth-interceptor.js"></script>
+<script type="text/javascript" src="app/thirstee.js"></script>
+<script type="text/javascript" src="app/routes.js"></script>
+<script type="text/javascript" src="app/service.js"></script>
+<script type="text/javascript" src="app/navbarctrl.js"></script>
+<script type="text/javascript" src="app/searchctrl.js"></script>
+<script type="text/javascript" src="app/resultsctrl.js"></script>
+<script type="text/javascript" src="app/regctrl.js"></script>
+<script type="text/javascript" src="app/directives.js"></script>
+
+</html>

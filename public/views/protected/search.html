@@ -1,0 +1,114 @@
+<div class="search-container">
+    <div class="row">
+        <div class="col s2"></div>
+        <div class="col s8 blue-grey-text text-lighten-4">
+            <h3 class="center-align">Have a drink :D</h3>
+            <form method="get" role="form" name="searchBar" autocomplete="off"
+                  ng-submit="ctrl.searchBar()">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="searchName" type="text" class="validate" name="searchName"
+                               ng-model="ctrl.search.name">
+                        <label for="searchName"><i class="material-icons">search</i>Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s5">
+                        <select multiple ng-model="ctrl.search.mrt">
+                            <option value="" disabled selected>Search by Closest MRT</option>
+                            <option value="1">Raffles Place</option>
+                            <option value="2">City Hall</option>
+                            <option value="3">Clarke Quay</option>
+                        </select>
+                    </div>
+                    <div class="input-field col s5">
+                        <select multiple ng-model="ctrl.search.drinks">
+                            <option value="" disabled selected>Search by Type of Drinks</option>
+                            <option value="1">Beer</option>
+                            <option value="2">Cocktails</option>
+                            <option value="2">Sake</option>
+                            <option value="3">Spirits</option>
+                            <option value="3">Wine</option>
+                        </select>
+                    </div>
+                    <div class="col2">
+                        <button type="submit" class="waves-effect waves-light btn search-button">
+                            <i class="material-icons">search</i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col s2"></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="img-container">
+        <div class="card medium left promo-card">
+            <div class="card-image">
+                <img src="assets/img/canada-day-cocktails.jpg">
+            </div>
+            <div class="card-content">
+                <span class="card-title">Fictitious Bar</span>
+                <p>2 FOR 1 ALL DAY!</p>
+                <p>(Only fiction for now!)</p>
+            </div>
+            <div class="card-action">
+                <a href="#">Read more</a>
+            </div>
+        </div>
+
+
+        <div class="card medium left promo-card">
+            <div class="card-image">
+                <img src="../../assets/img/stpat.jpg" height="150px"/>
+
+            </div>
+            <div class="card-content">
+                <span class="card-title">Irish Pub</span>
+                <p>St Patrick's Day Promo</p>
+                <p>(365 days of celebration?)</p>
+            </div>
+            <div class="card-action">
+                <a href="#">Read more</a>
+            </div>
+        </div>
+
+
+        <div class="card medium left promo-card">
+            <div class="card-image">
+                <img src="../../assets/img/october.png" height="150"/></div>
+            <div class="card-content">
+                <span class="card-title">Bier</span>
+                <p>OctoberFest coming up!</p>
+                <p>(doesn't have to be in october)</p>
+            </div>
+            <div class="card-action">
+                <a href="#">Read more</a>
+            </div>
+        </div>
+
+
+        <div class="card medium left promo-card">
+            <div class="card-image">
+                <img src="../../assets/img/sumyitai.jpg" height="150"/>
+            </div>
+            <div class="card-content">
+                <span class="card-title">Sum Yi Tai</span>
+                <p>Free drink for ladies in Cheongsam.</p>
+                <p>(or anyone that is willing to put one on)</p>
+            </div>
+            <div class="card-action">
+                <a href="#">Read more</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('select').material_select();
+    });
+</script>

@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="row">
+        <div class="col s1"></div>
+        <div class="col s10">
+            <form class="regForm-container" method="post" role="form" name="regForm" autocomplete="off"
+                  ng-submit="ctrl.updateUser()">
+
+                <h4 class="blue-grey-text text-darken-4 center-align">Complete Your Registration</h4>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="first_name" name="firstName" type="text" class="validate"
+                               ng-model="ctrl.userProfile.name.first" required>
+                        <label for="first_name">First Name</label>
+                        <div ng-messages="regForm.firstName.$dirty && regForm.firstName.$error">
+                            <div ng-messages-include="messages.html"></div>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input id="last_name" name="lastName" type="text" class="validate"
+                               ng-model="ctrl.userProfile.name.last">
+                        <label for="last_name">Last Name</label>
+                        <div ng-messages="regForm.lastName.$dirty && regForm.lastName.$error">
+                            <div ng-messages-include="messages.html"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" name="email" type="email" class="validate" ng-model="ctrl.userProfile.email">
+                        <label for="email">Email</label>
+                        <div ng-messages="regForm.email.$dirty && regForm.email.$error">
+                            <div ng-messages-include="messages.html"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select id="gender" name="gender" ng-model="ctrl.userProfile.gender">
+                            <option value="" disabled selected>Choose your gender</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                        <!--<input id="gender" name="gender" type="email" class="validate" ng-model="ctrl.userProfile.gender">-->
+                        <label for="gender">Gender</label>
+                        <div ng-messages="regForm.email.$dirty && regForm.email.$error">
+                            <div ng-messages-include="messages.html"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="dob" name="dob" type="date" class="datepicker" format="dd/mm/yyyy" ng-model="ctrl.userProfile.dob">
+                        <label for="dob">Date of Birth</label>
+                        <div ng-messages="regForm.dob.$dirty && regForm.dob.$error">
+                            <div ng-messages-include="messages.html"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--<button type="submit" class="waves-effect waves-light btn">Sign Up</button>-->
+                <a href="#/search" class="waves-effect waves-light btn">Submit</a>
+            </form>
+
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Age Verification</h4>
+                    <p>Let me in! I'm above 18. I am totally an adult now.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#/" class=" modal-action modal-close waves-effect waves-green btn-flat">Disagree</a>
+                    <a href="#/verify" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col s1">
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#modal1').openModal();
+        $('select').material_select();
+    });
+
+    var date = new Date();
+    date.setFullYear(date.getFullYear() - 18);
+
+    $('.datepicker').pickadate({
+        today: '',
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 60, // Creates a dropdown of 15 years to control year
+        max: date,
+        format: 'dd/mm/yyyy'
+    });
+</script>

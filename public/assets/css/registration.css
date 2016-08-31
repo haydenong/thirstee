@@ -1,0 +1,42 @@
+.regForm-container{
+    background-color: #cfd8dc;
+    padding: 2vmin;
+    margin: 0.1vmin 2vmin;
+}
+
+.messages {
+    font-size: smaller;
+    padding: 0;
+    margin:0;
+    color: red;
+}
+
+/*!*------REG FORM ONLY------*!*/
+/* LABEL AND BOTTOM BORDER COLOUR */
+.regForm-container .input-field label {
+    color: #263238;
+
+}
+.regForm-container .input-field input{
+    border-bottom: 1px solid #263238;
+}
+
+/*!* label underline focus color *!*/
+/*.regForm-container .input-field input[type=text]:focus {*/
+    /*border-bottom: 1px solid #424242;*/
+    /*box-shadow: 0 1px 0 0 #424242;*/
+/*}*/
+/*!* valid color *!*/
+.regForm-container .input-field input.valid {
+    border-bottom: 1px solid #424242;
+    box-shadow: 0 1px 0 0 #424242;
+}
+/*!* invalid color *!*/
+/*.regForm-container .input-field input[type=text].invalid {*/
+    /*border-bottom: 1px solid white;*/
+    /*box-shadow: 0 1px 0 0 white;*/
+/*}*/
+/*!* icon prefix focus color *!*/
+.regForm-container .input-field .prefix.active {
+    color: #263238;
+}

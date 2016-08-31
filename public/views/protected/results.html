@@ -1,0 +1,149 @@
+<div class="row">
+    <div class="col s2"></div>
+    <div class="col s7">
+        <div class="row search-container">
+            <div class="input-field col s9">
+                <h3 class="blue-grey-text text-lighten-4"><i>Results... 1 record found.</i>
+                </h3>
+            </div>
+            <div class="input-field col s3">
+                <br>
+                <select class="sortBy" multiple>
+                    <option value="1">Relevance</option>
+                    <option value="2">Distance</option>
+                    <option value="3">Price</option>
+                    <option value="" hidden disabled selected>Choose your option</option>
+                </select>
+                <label>Sort By</label>
+
+            </div>
+        </div>
+
+
+        <div class="card horizontal sticky-action">
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Jigger & Pony<i
+                        class="material-icons right">close</i></span>
+                <p>Address: 101 Amoy Street, Singapore 069921</p>
+                <p>Opening Hours: Mon-Thu: 6pm - 1am (last order 12.30am)
+                    Fri & Sat: 6pm - 3am (last order 2.30am)</p>
+                <p class="right"><img src="../../assets/img/jiggermap.jpg"/></p>
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <h4 class="center-align"><u class="activator">Jigger & Pony</u></h4>
+                    <p><b>Contact: 62239101</b></p>
+                    <p><b>Email: info@jiggerandpony.com</b></p>
+                    <p><b><u>Happy Hour</u></b></p>
+                    <p>
+                        Mon: 6PM to 8PM<br>
+                        Tue: 6PM to 8PM<br>
+                        Wed: 6PM to 8PM<br>
+                        Thu: 6PM to 8PM<br>
+                        Fri: 6PM to 8PM<br>
+                        Sat: 6PM to 8PM<br>
+                        Sun: Not Open<br>
+                    </p>
+                </div>
+                <div class="card-action">
+                    <button data-target="modal1" class="btn modal-trigger">Menu</button>
+                </div>
+            </div>
+            <div class="card-image valign-wrapper">
+                <img class="valign" src="../../assets/img/jiggerlogo.jpg"/></div>
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <img src="../../assets/img/jiggermenu.png" width="600"/></div>
+            </div>
+        </div>
+    </div>
+    <div class="col s3">
+        <div class="searchFilter search-container">
+            <br>
+            <h3 class="blue-grey-text text-lighten-4 right-align">Refine by...</h3>
+            <div class="row">
+                <div class="input-field col s12">
+                    <select class="sortBy" multiple>
+                        <option value="1">Beer</option>
+                        <option value="2">Cocktails</option>
+                        <option value="2">Sake</option>
+                        <option value="3">Spirits</option>
+                        <option value="3">Wine</option>
+                        <option value="" hidden disabled selected>Choose drink type</option>
+                    </select>
+                    <label>Drinks</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <select class="sortBy" multiple>
+                        <option value="1">All Day</option>
+                        <option value="2">8AM to 12PM</option>
+                        <option value="2">12PM to 6PM</option>
+                        <option value="3">6PM to 8PM</option>
+                        <option value="3">8PM to 10PM</option>
+                        <option value="3">10PM to 12AM</option>
+                        <option value="3">12AM to 2AM</option>
+                        <option value="3">2AM to 8AM</option>
+                        <option value="" hidden disabled selected>Choose drink type</option>
+                    </select>
+                    <label>Happy Hour Timings</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <select class="sortBy" multiple>
+                        <option value="1"> <$10</option>
+                        <option value="2">$10 to $15</option>
+                        <option value="2">$15 to $20</option>
+                        <option value="3"> >$20</option>
+                        <option value="" hidden disabled selected>Choose price range</option>
+                    </select>
+                    <label>Price</label>
+                </div>
+            </div>
+            <h3 class="blue-grey-text text-lighten-4 right-align">New Search</h3>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="searchName" type="text" class="validate" name="searchName" ng-model="ctrl.search.name">
+                    <label for="searchName"><i class="material-icons">search</i>Name</label>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select multiple ng-model="ctrl.search.mrt">
+                            <option value="" disabled selected>Search by Closest MRT</option>
+                            <option value="1">Raffles Place</option>
+                            <option value="2">City Hall</option>
+                            <option value="3">Clarke Quay</option>
+                        </select>
+                    </div>
+                </div>
+                <dv class="row">
+                    <div class="input-field col s12">
+                        <select multiple ng-model="ctrl.search.drinks">
+                            <option value="" disabled selected>Search Types of Drinks</option>
+                            <option value="1">Beer</option>
+                            <option value="2">Cocktails</option>
+                            <option value="2">Sake</option>
+                            <option value="3">Spirits</option>
+                            <option value="3">Wine</option>
+                        </select>
+                    </div>
+                </dv>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $('select').material_select();
+    });
+
+    $(document).ready(function () {
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+    });
+
+</script>

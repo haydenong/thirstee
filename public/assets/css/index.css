@@ -1,0 +1,50 @@
+.loginMenu {
+    background-color: #263238;
+    margin: 0;
+    min-width: 100%;
+    position: fixed;
+    z-index: 4;
+}
+
+.profilePicSec{
+    margin: 1vmin;
+    border-radius: 50%;
+}
+
+.search-container {
+    color: #cfd8dc;
+}
+
+.search-button {
+    margin-top: 2.5vmin;
+    margin-left: 3vmin;
+}
+
+.img-container {
+    padding-left: 5vmin;
+}
+
+.promo-card {
+    width: 200px;
+    margin: 1.25vmin;
+}
+
+.entryMsg{
+    background-color:  #263238;
+    color: #cfd8dc;
+    min-height: 100vmin;
+}
+
+.searchFilter{
+    min-height: 100vmin;
+    background-color: #263238;
+    margin-right: 0;
+}
+.navbarpromo{
+    margin-left: 37vmin;
+}
+
+.sortBy{
+    padding: 0;
+    margin: 0;
+}
